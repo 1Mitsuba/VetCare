@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda - PetCare</title>
+    <link rel="stylesheet" href="shop-styles.css">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Cabecera con navegación -->
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="PetCare Logo" class="logo">
+            <h1>PetCare</h1>
+        </div>
+        
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <div class="nav-container" id="navContainer">
+            <button class="close-menu" id="closeMenu">
+                <i class="fas fa-times"></i>
+            </button>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="about.html">Sobre Nosotros</a></li>
+                    <li><a href="services.html">Servicios</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="appointment.html">Reservar Cita</a></li>
+                    <li><a href="shop.html" class="shop-link active">Tienda</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="nav-icons">
+            <div class="nav-icon" id="cartToggle">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">3</span>
+            </div>
+            <div class="nav-icon">
+                <i class="fas fa-user"></i>
+            </div>
+        </div>
+        
+        <div class="nav-overlay" id="navOverlay"></div>
+    </header>
+
+    <!-- Banner de Tienda -->
+    <section class="page-banner">
+        <div class="banner-content">
+            <h1>Tienda PetCare</h1>
+            <p>Encuentra todo lo que tu mascota necesita: alimentación premium, accesorios, juguetes y mucho más.</p>
+        </div>
+    </section>
+
+    <!-- Contenido principal de la tienda -->
+    <div class="shop-container">
+        <!-- Botón de filtro visible solo en móviles -->
+        <button class="filter-toggle" id="filterToggle">
+            <i class="fas fa-filter"></i> Mostrar Filtros
+        </button>
+        
+        <!-- Filtros - tarjeta independiente -->
+        <div class="filters-card" id="filtersCard">
+            <div class="filter-section">
+                <h3 class="filter-title">Categorías</h3>
+                <ul class="category-filter">
+                    <li><a href="#" class="active">Todos los productos <span>150</span></a></li>
+                    <li><a href="#">Alimentos <span>42</span></a></li>
+                    <li><a href="#">Accesorios <span>38</span></a></li>
+                    <li><a href="#">Juguetes <span>27</span></a></li>
+                    <li><a href="#">Higiene <span>23</span></a></li>
+                    <li><a href="#">Camas y muebles <span>15</span></a></li>
+                    <li><a href="#">Salud <span>5</span></a></li>
+                </ul>
+            </div>
+            
+            <div class="filter-section">
+                <h3 class="filter-title">Precio</h3>
+                <div class="price-filter">
+                    <input type="range" class="price-slider" min="0" max="1000" value="500" id="priceRange">
+                    <div class="price-range">
+                        <span>$0</span>
+                        <span id="priceValue">$500</span>
+                        <span>$1000</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="filter-section">
+                <h3 class="filter-title">Marca</h3>
+                <div class="brand-filter">
+                    <label class="checkbox-label">
+                        <input type="checkbox" checked> PetCare Premium
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox"> Royal Canin
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox"> Purina
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox"> Hills
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox"> Pedigree
+                    </label>
+                </div>
+            </div>
+            
+            <div class="filter-section">
+                <h3 class="filter-title">Valoración</h3>
+                <div class="rating-filter">
+                    <label class="checkbox-label">
+                        <input type="checkbox"> 5 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox"> 4 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox"> 3 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox"> 2 <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </label>
+                </div>
+            </div>
+            
+            <div class="filter-section">
+                <h3 class="filter-title">Tipo de mascota</h3>
+                <div class="brand-filter">
+                    <label class="checkbox-label">
+                        <input type="checkbox" checked> Perros
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" checked> Gatos
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox"> Aves
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox"> Roedores
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox"> Peces
+                    </label>
+                </div>
+            </div>
+            
+            <button class="filter-btn">Aplicar Filtros</button>
+        </div>
+        
+        <!-- Contenido de productos -->
+        <div class="products-container">
+            <!-- Barra superior - tarjeta independiente -->
+            <div class="shop-header-card">
+                <div class="products-count">
+                    Mostrando <span>15</span> de <span>150</span> productos
+                </div>
+                <div class="shop-controls">
+                    <select class="sort-select" id="sortSelect">
+                        <option value="relevance">Relevancia</option>
+                        <option value="price-asc">Precio: Menor a Mayor</option>
+                        <option value="price-desc">Precio: Mayor a Menor</option>
+                        <option value="rating">Mejor Valorados</option>
+                        <option value="newest">Más Nuevos</option>
+                    </select>
+                    <div class="view-buttons">
+                        <button class="view-btn active" id="gridViewBtn"><i class="fas fa-th"></i></button>
+                        <button class="view-btn" id="listViewBtn"><i class="fas fa-list"></i></button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Grilla de productos - tarjetas independientes -->
+            <div class="products-grid" id="productsGrid">
+                <!-- Producto 1 -->
+                <div class="product-card">
+                    <div class="product-badge badge-new">Nuevo</div>
+                    <div class="product-image">
+                        <img src="product-1.jpg" alt="Alimento Premium para Perros">
+                        <div class="product-actions">
+                            <div class="action-btn"><i class="far fa-heart"></i></div>
+                            <div class="action-btn"><i class="fas fa-eye"></i></div>
+                            <div class="action-btn"><i class="fas fa-sync-alt"></i></div>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Alimentos</span>
+                        <h3 class="product-title">Alimento Premium para Perros Adultos</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="rating-count">(42)</span>
+                        </div>
+                        <div class="product-prices">
+                            <span class="current-price">$349.00</span>
+                            <span class="old-price">$399.00</span>
+                        </div>
+                        <button class="product-btn"><i class="fas fa-shopping-cart"></i> Añadir al carrito</button>
+                    </div>
+                </div>
+                
+                <!-- Producto 2 -->
+                <div class="product-card">
+                    <div class="product-badge badge-sale">-15%</div>
+                    <div class="product-image">
+                        <img src="product-2.jpg" alt="Collar para Perros">
+                        <div class="product-actions">
+                            <div class="action-btn"><i class="far fa-heart"></i></div>
+                            <div class="action-btn"><i class="fas fa-eye"></i></div>
+                            <div class="action-btn"><i class="fas fa-sync-alt"></i></div>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Accesorios</span>
+                        <h3 class="product-title">Collar Ajustable con GPS</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="rating-count">(28)</span>
+                        </div>
+                        <div class="product-prices">
+                            <span class="current-price">$459.00</span>
+                            <span class="old-price">$539.00</span>
+                        </div>
+                        <button class="product-btn"><i class="fas fa-shopping-cart"></i> Añadir al carrito</button>
+                    </div>
+                </div>
+                
+                <!-- Producto 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="product-3.jpg" alt="Juguete para Gatos">
+                        <div class="product-actions">
+                            <div class="action-btn"><i class="far fa-heart"></i></div>
+                            <div class="action-btn"><i class="fas fa-eye"></i></div>
+                            <div class="action-btn"><i class="fas fa-sync-alt"></i></div>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Juguetes</span>
+                        <h3 class="product-title">Juguete Interactivo para Gatos</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span class="rating-count">(19)</span>
+                        </div>
+                        <div class="product-prices">
+                            <span class="current-price">$189.00</span>
+                        </div>
+                        <button class="product-btn"><i class="fas fa-shopping-cart"></i> Añadir al carrito</button>
+                    </div>
+                </div>
+                
+                <!-- Producto 4 -->
+                <div class="product-card">
+                    <div class="product-badge badge-out">Agotado</div>
+                    <div class="product-image">
+                        <img src="product-4.jpg" alt="Cama para Perros">
+                        <div class="product-actions">
+                            <div class="action-btn"><i class="far fa-heart"></i></div>
+                            <div class="action-btn"><i class="fas fa-eye"></i></div>
+                            <div class="action-btn"><i class="fas fa-sync-alt"></i></div>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Camas y muebles</span>
+                        <h3 class="product-title">Cama Ortopédica para Perros Grandes</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="rating-count">(36)</span>
+                        </div>
+                        <div class="product-prices">
+                            <span class="current-price">$889.00</span>
+                            <span class="old-price">$999.00</span>
+                        </div>
+                        <button class="product-btn out-of-stock"><i class="fas fa-times"></i> Agotado</button>
+                    </div>
+                </div>
+                
+                <!-- Producto 5 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="product-5.jpg" alt="Champú para Mascotas">
+                        <div class="product-actions">
+                            <div class="action-btn"><i class="far fa-heart"></i></div>
+                            <div class="action-btn"><i class="fas fa-eye"></i></div>
+                            <div class="action-btn"><i class="fas fa-sync-alt"></i></div>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Higiene</span>
+                        <h3 class="product-title">Champú Hipoalergénico para Mascotas</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span class="rating-count">(24)</span>
+                        </div>
+                        <div class="product-prices">
+                            <span class="current-price">$149.00</span>
+                        </div>
+                        <button class="product-btn"><i class="fas fa-shopping-cart"></i> Añadir al carrito</button>
+                    </div>
+                </div>
+                
+                <!-- Producto 6 -->
+                <div class="product-card">
+                    <div class="product-badge badge-new">Nuevo</div>
+                    <div class="product-image">
+                        <img src="product-6.jpg" alt="Alimento para Gatos">
+                        <div class="product-actions">
+                            <div class="action-btn"><i class="far fa-heart"></i></div>
+                            <div class="action-btn"><i class="fas fa-eye"></i></div>
+                            <div class="action-btn"><i class="fas fa-sync-alt"></i></div>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <span class="product-category">Alimentos</span>
+                        <h3 class="product-title">Alimento Húmedo Premium para Gatos</h3>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span class="rating-count">(31)</span>
+                        </div>
+                        <div class="product-prices">
+                            <span class="current-price">$225.00</span>
+                            <span class="old-price">$259.00</span>
+                        </div>
+                        <button class="product-btn"><i class="fas fa-shopping-cart"></i> Añadir al carrito</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Vista de lista - alternativa a la grilla -->
+            <div class="products-list" id="productsList" style="display: none;">
+                <!-- Producto 1 en vista de lista -->
+                <div class="list-product">
+                    <div class="list-image">
+                        <img src="product-1.jpg" alt="Alimento Premium para Perros">
+                        <div class="product-badge badge-new">Nuevo</div>
+                    </div>
+                    <div class="list-content">
+                        <div class="list-top">
+                            <span class="product-category">Alimentos</span>
+                            <h3 class="list-title">Alimento Premium para Perros Adultos</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span class="rating-count">(42)</span>
+                            </div>
+                            <p class="list-description">Alimento premium balanceado con proteínas de alta calidad, vitaminas y minerales esenciales para perros adultos. Ayuda a mantener un peso saludable y promueve un sistema digestivo fuerte.</p>
+                        </div>
+                        <div class="list-bottom">
+                            <div class="list-prices">
+                                <span class="current-price">$349.00</span>
+                                <span class="old-price">$399.00</span>
+                            </div>
+                            <div class="list-actions">
+                                <button class="list-btn"><i class="fas fa-shopping-cart"></i> Añadir al carrito</button>
+                                <button class="list-btn outline"><i class="far fa-heart"></i></button>
+                                <button class="list-btn outline"><i class="fas fa-eye"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Producto 2 en vista de lista -->
+                <div class="list-product">
+                    <div class="list-image">
+                        <img src="product-2.jpg" alt="Collar para Perros">
+                        <div class="product-badge badge-sale">-15%</div>
+                    </div>
+                    <div class="list-content">
+                        <div class="list-top">
+                            <span class="product-category">Accesorios</span>
+                            <h3 class="list-title">Collar Ajustable con GPS</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span class="rating-count">(28)</span>
+                            </div>
+                            <p class="list-description">Collar inteligente con GPS integrado que te permite rastrear la ubicación de tu mascota en tiempo real. Ajustable para diferentes tamaños de cuello y fabricado con materiales resistentes al agua.</p>
+                        </div>
+                        <div class="list-bottom">
+                            <div class="list-prices">
+                                <span class="current-price">$459.00</span>
+                                <span class="old-price">$539.00</span>
+                            </div>
+                            <div class="list-actions">
+                                <button class="list-btn"><i class="fas fa-shopping-cart"></i> Añadir al carrito</button>
+                                <button class="list-btn outline"><i class="far fa-heart"></i></button>
+                                <button class="list-btn outline"><i class="fas fa-eye"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Producto 3 en vista de lista -->
+                <div class="list-product">
+                    <div class="list-image">
+                        <img src="product-3.jpg" alt="Juguete para Gatos">
+                    </div>
+                    <div class="list-content">
+                        <div class="list-top">
+                            <span class="product-category">Juguetes</span>
+                            <h3 class="list-title">Juguete Interactivo para Gatos</h3>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span class="rating-count">(19)</span>
+                            </div>
+                            <p class="list-description">Juguete interactivo diseñado para estimular el instinto de caza de tu gato. Incluye plumas, cascabeles y un sistema de movimiento aleatorio que mantiene a tu mascota entretenida y activa.</p>
+                        </div>
+                        <div class="list-bottom">
+                            <div class="list-prices">
+                                <span class="current-price">$189.00</span>
+                            </div>
+                            <div class="list-actions">
+                                <button class="list-btn"><i class="fas fa-shopping-cart"></i> Añadir al carrito</button>
+                                <button class="list-btn outline"><i class="far fa-heart"></i></button>
+                                <button class="list-btn outline"><i class="fas fa-eye"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Paginación - tarjeta independiente -->
+            <div class="pagination-card">
+                <div class="pagination">
+                    <div class="page-arrow"><i class="fas fa-chevron-left"></i></div>
+                    <div class="page-item active">1</div>
+                    <div class="page-item">2</div>
+                    <div class="page-item">3</div>
+                    <div class="page-item">4</div>
+                    <div class="page-arrow"><i class="fas fa-chevron-right"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Carrusel de marcas - tarjeta independiente -->
+    <div class="container">
+        <div class="brands-card">
+            <h3 class="brands-title">Nuestras Marcas</h3>
+            <div class="brands-slider">
+                <div class="brand-item">
+                    <img src="brand-1.png" alt="PetCare Premium">
+                </div>
+                <div class="brand-item">
+                    <img src="brand-2.png" alt="Royal Canin">
+                </div>
+                <div class="brand-item">
+                    <img src="brand-3.png" alt="Purina">
+                </div>
+                <div class="brand-item">
+                    <img src="brand-4.png" alt="Hills">
+                </div>
+                <div class="brand-item">
+                    <img src="brand-5.png" alt="Pedigree">
+                </div>
+                <div class="brand-item">
+                    <img src="brand-6.png" alt="Whiskas">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Newsletter - tarjeta independiente -->
+    <div class="container">
+        <div class="newsletter-card">
+            <div class="newsletter-content">
+                <h3 class="newsletter-title">¡Suscríbete y Obtén 10% de Descuento!</h3>
+                <p class="newsletter-description">Regístrate para recibir novedades sobre nuestros productos, ofertas exclusivas y consejos para el cuidado de tus mascotas.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit">Suscribirme</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Carrito emergente -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3 class="cart-title">Carrito de Compras (3)</h3>
+            <button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-items">
+            <!-- Producto en carrito 1 -->
+            <div class="cart-item">
+                <div class="cart-item-image">
+                    <img src="product-1.jpg" alt="Alimento Premium para Perros">
+                </div>
+                <div class="cart-item-content">
+                    <h4 class="cart-item-title">Alimento Premium para Perros Adultos</h4>
+                    <div class="cart-item-price">$349.00</div>
+                    <div class="cart-item-quantity">
+                        <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                        <input type="text" class="quantity-input" value="1" readonly>
+                        <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                        <span class="cart-item-remove"><i class="far fa-trash-alt"></i> Eliminar</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Producto en carrito 2 -->
+            <div class="cart-item">
+                <div class="cart-item-image">
+                    <img src="product-3.jpg" alt="Juguete para Gatos">
+                </div>
+                <div class="cart-item-content">
+                    <h4 class="cart-item-title">Juguete Interactivo para Gatos</h4>
+                    <div class="cart-item-price">$189.00</div>
+                    <div class="cart-item-quantity">
+                        <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                        <input type="text" class="quantity-input" value="1" readonly>
+                        <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                        <span class="cart-item-remove"><i class="far fa-trash-alt"></i> Eliminar</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Producto en carrito 3 -->
+            <div class="cart-item">
+                <div class="cart-item-image">
+                    <img src="product-5.jpg" alt="Champú para Mascotas">
+                </div>
+                <div class="cart-item-content">
+                    <h4 class="cart-item-title">Champú Hipoalergénico para Mascotas</h4>
+                    <div class="cart-item-price">$149.00</div>
+                    <div class="cart-item-quantity">
+                        <button class="quantity-btn minus"><i class="fas fa-minus"></i></button>
+                        <input type="text" class="quantity-input" value="2" readonly>
+                        <button class="quantity-btn plus"><i class="fas fa-plus"></i></button>
+                        <span class="cart-item-remove"><i class="far fa-trash-alt"></i> Eliminar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-subtotal">
+                Subtotal: <span>$836.00</span>
+            </div>
+            <div class="cart-buttons">
+                <button class="cart-checkout">Proceder al Pago</button>
+                <button class="cart-view">Ver Carrito</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <img src="logo.png" alt="PetCare Logo" class="footer-logo">
+                <p>En PetCare, nos dedicamos a proporcionar los mejores servicios y consejos para el cuidado de tus mascotas. Contamos con un equipo de profesionales apasionados por el bienestar animal.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Enlaces Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="about.html">Sobre Nosotros</a></li>
+                    <li><a href="services.html">Servicios</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="shop.html">Tienda</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Servicios</h3>
+                <ul class="footer-links">
+                    <li><a href="services.html#medical">Atención Médica</a></li>
+                    <li><a href="services.html#grooming">Peluquería</a></li>
+                    <li><a href="services.html#training">Entrenamiento</a></li>
+                    <li><a href="services.html#daycare">Guardería</a></li>
+                    <li><a href="services.html#hotel">Hotel para Mascotas</a></li>
+                    <li><a href="services.html#adoption">Adopción</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Boletín</h3>
+                <p>Suscríbete para recibir noticias, ofertas especiales y consejos para el cuidado de tus mascotas.</p>
+                <form class="footer-newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit" class="footer-newsletter-btn">Suscribirse</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p> &copy; 2025 PetCare. Todos los derechos reservados. Diseñado por 1Mitsuba.</p>
+            <p><a href="privacy-policy.html">Política de privacidad</a> | <a href="terms-of-service.html">Términos de servicio</a></p>
+            <p>Desarrollado por <a href="https://www.tusitio.com" target="_blank"></a>1Mitsuba</p>
+        </div>
+    </footer>
+
+    <!-- Script para interactividad -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menú hamburguesa
+            const menuToggle = document.getElementById('menuToggle');
+            const closeMenu = document.getElementById('closeMenu');
+            const navContainer = document.getElementById('navContainer');
+            const navOverlay = document.getElementById('navOverlay');
+            
+            if (menuToggle && closeMenu && navContainer && navOverlay) {
+                menuToggle.addEventListener('click', function() {
+                    navContainer.classList.add('active');
+                    navOverlay.classList.add('active');
+                    document.body.classList.add('menu-open');
+                    document.body.style.overflow = 'hidden';
+                });
+                
+                closeMenu.addEventListener('click', closeNav);
+                navOverlay.addEventListener('click', closeNav);
+                
+                const navLinks = document.querySelectorAll('.nav-links a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', closeNav);
+                });
+            }
+            
+            function closeNav() {
+                if (navContainer && navOverlay) {
+                    navContainer.classList.remove('active');
+                    navOverlay.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                    document.body.style.overflow = '';
+                }
+            }
+            
+            // Cambio de vista (grid/list)
+            const gridViewBtn = document.getElementById('gridViewBtn');
+            const listViewBtn = document.getElementById('listViewBtn');
+            const productsGrid = document.getElementById('productsGrid');
+            const productsList = document.getElementById('productsList');
+            
+            if (gridViewBtn && listViewBtn && productsGrid && productsList) {
+                gridViewBtn.addEventListener('click', function() {
+                    productsGrid.style.display = 'grid';
+                    productsList.style.display = 'none';
+                    gridViewBtn.classList.add('active');
+                    listViewBtn.classList.remove('active');
+                });
+                
+                listViewBtn.addEventListener('click', function() {
+                    productsGrid.style.display = 'none';
+                    productsList.style.display = 'flex';
+                    gridViewBtn.classList.remove('active');
+                    listViewBtn.classList.add('active');
+                });
+            }
+            
+            // Filtros en móvil
+            const filterToggle = document.getElementById('filterToggle');
+            const filtersCard = document.getElementById('filtersCard');
+            
+            if (filterToggle && filtersCard) {
+                filterToggle.addEventListener('click', function() {
+                    filtersCard.classList.toggle('active');
+                    
+                    if (filtersCard.classList.contains('active')) {
+                        filterToggle.innerHTML = '<i class="fas fa-times"></i> Ocultar Filtros';
+                    } else {
+                        filterToggle.innerHTML = '<i class="fas fa-filter"></i> Mostrar Filtros';
+                    }
+                });
+            }
+            
+            // Slider de precio
+            const priceRange = document.getElementById('priceRange');
+            const priceValue = document.getElementById('priceValue');
+            
+            if (priceRange && priceValue) {
+                priceRange.addEventListener('input', function() {
+                    priceValue.textContent = '$' + this.value;
+                });
+            }
+            
+            // Carrito emergente
+            const cartToggle = document.getElementById('cartToggle');
+            const cartClose = document.getElementById('cartClose');
+            const cartSidebar = document.getElementById('cartSidebar');
+            const cartOverlay = document.getElementById('cartOverlay');
+            
+            if (cartToggle && cartClose && cartSidebar && cartOverlay) {
+                cartToggle.addEventListener('click', function() {
+                    cartSidebar.classList.add('active');
+                    cartOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+                
+                cartClose.addEventListener('click', closeCart);
+                cartOverlay.addEventListener('click', closeCart);
+            }
+            
+            function closeCart() {
+                if (cartSidebar && cartOverlay) {
+                    cartSidebar.classList.remove('active');
+                    cartOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            }
+            
+            // Botones de aumentar/disminuir cantidad
+            const quantityMinusBtns = document.querySelectorAll('.quantity-btn.minus');
+            const quantityPlusBtns = document.querySelectorAll('.quantity-btn.plus');
+            
+            quantityMinusBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const input = this.nextElementSibling;
+                    let value = parseInt(input.value);
+                    if (value > 1) {
+                        input.value = value - 1;
+                    }
+                });
+            });
+            
+            quantityPlusBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const input = this.previousElementSibling;
+                    let value = parseInt(input.value);
+                    input.value = value + 1;
+                });
+            });
+            
+            // Eliminar producto del carrito
+            const removeButtons = document.querySelectorAll('.cart-item-remove');
+            
+            removeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const cartItem = this.closest('.cart-item');
+                    cartItem.style.opacity = '0';
+                    setTimeout(() => {
+                        cartItem.remove();
+                        updateCartCount();
+                    }, 300);
+                });
+            });
+            
+            function updateCartCount() {
+                const cartItems = document.querySelectorAll('.cart-item');
+                const cartCount = document.querySelector('.cart-count');
+                const cartTitle = document.querySelector('.cart-title');
+                
+                if (cartCount) {
+                    cartCount.textContent = cartItems.length;
+                }
+                
+                if (cartTitle) {
+                    cartTitle.textContent = `Carrito de Compras (${cartItems.length})`;
+                }
+                
+                if (cartItems.length === 0) {
+                    const cartItemsContainer = document.querySelector('.cart-items');
+                    if (cartItemsContainer) {
+                        cartItemsContainer.innerHTML = `
+                            <div class="cart-empty">
+                                <i class="fas fa-shopping-basket"></i>
+                                <p>Tu carrito está vacío</p>
+                                <p>Añade productos para continuar comprando</p>
+                            </div>
+                        `;
+                    }
+                }
+            }
+            
+            // Añadir al carrito
+            const addToCartButtons = document.querySelectorAll('.product-btn:not(.out-of-stock), .list-btn:not(.outline)');
+            
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const productCard = this.closest('.product-card') || this.closest('.list-product');
+                    const productTitle = productCard.querySelector('.product-title') || productCard.querySelector('.list-title');
+                    const productPrice = productCard.querySelector('.current-price');
+                    const productImage = productCard.querySelector('img');
+                    
+                    // Animación de añadido
+                    this.innerHTML = '<i class="fas fa-check"></i> Añadido';
+                    this.style.backgroundColor = '#28a745';
+                    
+                    setTimeout(() => {
+                        this.innerHTML = '<i class="fas fa-shopping-cart"></i> Añadir al carrito';
+                        this.style.backgroundColor = '';
+                    }, 1500);
+                    
+                    // Mostrar notificación
+                    const notification = document.createElement('div');
+                    notification.className = 'add-notification';
+                    notification.textContent = '¡Producto añadido al carrito!';
+                    document.body.appendChild(notification);
+                    
+                    setTimeout(() => {
+                        notification.style.opacity = '0';
+                        setTimeout(() => {
+                            notification.remove();
+                        }, 300);
+                    }, 2000);
+                });
+            });
+            
+            // Animaciones al scroll
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+            
+            function checkScroll() {
+                animateElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementTop < windowHeight - 100) {
+                        element.classList.add('animated');
+                    }
+                });
+            }
+            
+            // Comprobar elementos visibles al cargar
+            checkScroll();
+            
+            // Comprobar elementos visibles al hacer scroll
+            window.addEventListener('scroll', checkScroll);
+        });
+    </script>
+</body>
+</html>

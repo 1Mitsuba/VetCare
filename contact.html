@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - PetCare</title>
+    <link rel="stylesheet" href="contact-styles.css">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Cabecera con navegación -->
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="PetCare Logo" class="logo">
+            <h1>PetCare</h1>
+        </div>
+        
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <div class="nav-container" id="navContainer">
+            <button class="close-menu" id="closeMenu">
+                <i class="fas fa-times"></i>
+            </button>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="about.html">Sobre Nosotros</a></li>
+                    <li><a href="services.html">Servicios</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="appointment.html">Reservar Cita</a></li>
+                    <li><a href="shop.html" class="shop-link">Tienda</a></li>
+                    <li><a href="contact.html" class="active">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Añadir esta sección -->
+        <div class="nav-icons">
+            <a href="login.html" class="nav-icon">
+                <i class="fas fa-user"></i>
+            </a>
+        </div>
+        <div class="nav-overlay" id="navOverlay"></div>
+    </header>
+
+    <!-- Banner de Contacto -->
+    <section class="page-banner">
+        <div class="banner-content">
+            <h1>Contacto</h1>
+            <p>Estamos aquí para ayudarte. Contáctanos con cualquier pregunta, sugerencia o para solicitar información.</p>
+        </div>
+    </section>
+
+    <!-- Contenido principal -->
+    <div class="contact-container">
+        <!-- Formulario de contacto - tarjeta independiente -->
+        <div class="contact-form-card">
+            <h2 class="form-title">Envíanos un mensaje</h2>
+            <p class="form-description">Completa el formulario a continuación y te responderemos a la brevedad posible. Los campos marcados con * son obligatorios.</p>
+            
+            <form id="contactForm">
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="name">Nombre completo *</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="email">Correo electrónico *</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="subject">Asunto *</label>
+                            <select id="subject" class="form-control" required>
+                                <option value="">Selecciona un asunto</option>
+                                <option value="information">Información General</option>
+                                <option value="services">Servicios</option>
+                                <option value="appointment">Citas</option>
+                                <option value="suggestion">Sugerencias</option>
+                                <option value="complaint">Quejas</option>
+                                <option value="other">Otro</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Mensaje *</label>
+                    <textarea id="message" class="form-control" rows="6" required placeholder="¿En qué podemos ayudarte?"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="petType">¿Qué mascota tienes?</label>
+                    <div class="form-row">
+                        <div class="form-col">
+                            <input type="checkbox" id="petDog"> <label for="petDog">Perro</label>
+                        </div>
+                        <div class="form-col">
+                            <input type="checkbox" id="petCat"> <label for="petCat">Gato</label>
+                        </div>
+                        <div class="form-col">
+                            <input type="checkbox" id="petOther"> <label for="petOther">Otro</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="form-submit">Enviar Mensaje</button>
+            </form>
+        </div>
+        
+        <!-- Información de contacto - tarjeta independiente -->
+        <div class="contact-info-card">
+            <div class="contact-info-content">
+                <h3 class="contact-title">Información de Contacto</h3>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>Dirección</h4>
+                        <p>Av. Principal #123, Colonia Centro<br>Ciudad de México, CP 12345</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>Teléfono</h4>
+                        <p><a href="tel:+525512345678">+52 55 1234 5678</a></p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>Correo Electrónico</h4>
+                        <p><a href="mailto:contacto@petcare.com">contacto@petcare.com</a></p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>Horario de Atención</h4>
+                        <p>Lunes a Viernes: 9:00 AM - 6:00 PM<br>Sábados: 9:00 AM - 2:00 PM</p>
+                    </div>
+                </div>
+                
+                <div class="contact-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mapa y Ubicación - tarjeta independiente -->
+        <div class="map-card">
+            <h3 class="map-title">Nuestra Ubicación</h3>
+            <div class="map-container">
+                <!-- Reemplazar con tu API key de Google Maps -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.661773572189!2d-99.16988368509359!3d19.427023986888674!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff35f5bd1563%3A0x6c366f0e2de02ff7!2sEl%20%C3%81ngel%20de%20la%20Independencia!5e0!3m2!1ses-419!2smx!4v1649269194546!5m2!1ses-419!2smx" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            
+            <div class="location-info">
+                <div class="location-detail">
+                    <h4>Cómo llegar</h4>
+                    <p>Estamos ubicados en una zona céntrica, de fácil acceso tanto en transporte público como en vehículo particular.</p>
+                    <ul>
+                        <li><strong>En Metro:</strong> Línea 1, Estación Centro, a 3 cuadras.</li>
+                        <li><strong>En Autobús:</strong> Rutas 10, 25 y 30, parada frente al edificio.</li>
+                        <li><strong>En Auto:</strong> Estacionamiento propio disponible para clientes.</li>
+                    </ul>
+                </div>
+                
+                <div class="location-detail">
+                    <h4>Referencias</h4>
+                    <p>Nos encontramos:</p>
+                    <ul>
+                        <li>A una cuadra del Parque Central</li>
+                        <li>Frente al Centro Comercial Plaza Mayor</li>
+                        <li>Edificio color beige con escaparates de vidrio</li>
+                        <li>Entrada principal con rampas de accesibilidad</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Preguntas frecuentes - tarjeta independiente -->
+        <div class="faq-card">
+            <h3 class="faq-title">Preguntas Frecuentes</h3>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>¿Cuál es el tiempo promedio de respuesta?</h4>
+                        <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Nuestro equipo de atención al cliente responde la mayoría de las consultas en un plazo de 24 horas hábiles. Para asuntos urgentes, recomendamos contactarnos por teléfono para una atención inmediata.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>¿Ofrecen servicios a domicilio?</h4>
+                        <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí, contamos con servicios a domicilio para ciertos tipos de atención como vacunación, revisiones de rutina y algunas emergencias menores. Este servicio tiene un costo adicional dependiendo de la distancia. Por favor contacta con nosotros para más detalles y disponibilidad.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>¿Cómo puedo hacer una sugerencia o presentar una queja?</h4>
+                        <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Valoramos mucho tus comentarios. Puedes enviarnos sugerencias o quejas a través de este formulario de contacto, seleccionando el asunto correspondiente, o directamente a nuestro correo dedicado: feedback@petcare.com. También puedes hablar con nuestro gerente de servicio al cliente durante tu visita.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>¿Tienen algún programa de afiliación o descuentos?</h4>
+                        <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí, contamos con varios programas de fidelización y descuentos. Ofrecemos un plan de membresía anual que incluye revisiones gratuitas, descuentos en productos y servicios, y atención preferencial. También tenemos descuentos para clientes que refieran amigos, adultos mayores y para quienes adopten mascotas de nuestros refugios asociados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Equipo de Soporte - tarjeta independiente -->
+        <div class="support-team-card">
+            <h3 class="support-team-title">Nuestro Equipo de Atención al Cliente</h3>
+            <div class="support-team-grid">
+                <div class="support-member">
+                    <div class="support-avatar">
+                        <img src="support-1.jpg" alt="Ana Morales">
+                    </div>
+                    <h4 class="support-name">Ana Morales</h4>
+                    <p class="support-role">Gerente de Atención al Cliente</p>
+                    <p class="support-description">Especialista en resolución de problemas complejos y mejora continua de la experiencia del cliente.</p>
+                    <a href="mailto:ana.morales@petcare.com" class="support-contact-btn">Contactar</a>
+                </div>
+                
+                <div class="support-member">
+                    <div class="support-avatar">
+                        <img src="support-2.jpg" alt="Carlos Vega">
+                    </div>
+                    <h4 class="support-name">Carlos Vega</h4>
+                    <p class="support-role">Coordinador de Citas</p>
+                    <p class="support-description">Experto en optimización de agendas y gestión de citas para diferentes servicios veterinarios.</p>
+                    <a href="mailto:carlos.vega@petcare.com" class="support-contact-btn">Contactar</a>
+                </div>
+                
+                <div class="support-member">
+                    <div class="support-avatar">
+                        <img src="support-3.jpg" alt="Laura Mendoza">
+                    </div>
+                    <h4 class="support-name">Laura Mendoza</h4>
+                    <p class="support-role">Asesora de Productos</p>
+                    <p class="support-description">Conocedora de toda nuestra línea de productos y asesora especializada en nutrición animal.</p>
+                    <a href="mailto:laura.mendoza@petcare.com" class="support-contact-btn">Contactar</a>
+                </div>
+                
+                <div class="support-member">
+                    <div class="support-avatar">
+                        <img src="support-4.jpg" alt="Roberto Díaz">
+                    </div>
+                    <h4 class="support-name">Roberto Díaz</h4>
+                    <p class="support-role">Soporte Técnico</p>
+                    <p class="support-description">Responsable de la plataforma online, reservas y consultas técnicas sobre nuestra web y app.</p>
+                    <a href="mailto:roberto.diaz@petcare.com" class="support-contact-btn">Contactar</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CTA Newsletter - tarjeta independiente -->
+        <div class="newsletter-card">
+            <div class="newsletter-content">
+                <h3 class="newsletter-title">Mantente Informado</h3>
+                <p class="newsletter-description">Suscríbete a nuestro boletín y recibe consejos de cuidado para mascotas, promociones exclusivas y noticias sobre nuestros servicios.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit">Suscribirme</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mensaje emergente de confirmación -->
+    <div class="confirmation-overlay" id="confirmationOverlay"></div>
+    <div class="confirmation-message" id="confirmationMessage">
+        <div class="confirmation-icon">
+            <i class="fas fa-check"></i>
+        </div>
+        <h3 class="confirmation-title">¡Mensaje Enviado!</h3>
+        <p class="confirmation-text">Hemos recibido tu mensaje. Nuestro equipo te responderá a la brevedad posible. ¡Gracias por contactarnos!</p>
+        <button class="confirmation-btn" id="confirmationClose">Entendido</button>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <img src="logo.png" alt="PetCare Logo" class="footer-logo">
+                <p>En PetCare, nos dedicamos a proporcionar los mejores servicios y consejos para el cuidado de tus mascotas. Contamos con un equipo de profesionales apasionados por el bienestar animal.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Enlaces Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="about.html">Sobre Nosotros</a></li>
+                    <li><a href="services.html">Servicios</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="shop.html">Tienda</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Servicios</h3>
+                <ul class="footer-links">
+                    <li><a href="services.html#medical">Atención Médica</a></li>
+                    <li><a href="services.html#grooming">Peluquería</a></li>
+                    <li><a href="services.html#training">Entrenamiento</a></li>
+                    <li><a href="services.html#daycare">Guardería</a></li>
+                    <li><a href="services.html#hotel">Hotel para Mascotas</a></li>
+                    <li><a href="services.html#adoption">Adopción</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Boletín</h3>
+                <p>Suscríbete para recibir noticias, ofertas especiales y consejos para el cuidado de tus mascotas.</p>
+                <form class="footer-newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit" class="footer-newsletter-btn">Suscribirse</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p> &copy; 2025 PetCare. Todos los derechos reservados. Diseñado por 1Mitsuba.</p>
+            <p><a href="privacy-policy.html">Política de privacidad</a> | <a href="terms-of-service.html">Términos de servicio</a></p>
+            <p>Desarrollado por <a href="https://www.tusitio.com" target="_blank"></a>1Mitsuba</p>
+        </div>
+    </footer>
+
+    <!-- Script para interactividad -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menú hamburguesa
+            const menuToggle = document.getElementById('menuToggle');
+            const closeMenu = document.getElementById('closeMenu');
+            const navContainer = document.getElementById('navContainer');
+            const navOverlay = document.getElementById('navOverlay');
+            
+            if (menuToggle && closeMenu && navContainer && navOverlay) {
+                menuToggle.addEventListener('click', function() {
+                    navContainer.classList.add('active');
+                    navOverlay.classList.add('active');
+                    document.body.classList.add('menu-open');
+                    document.body.style.overflow = 'hidden';
+                });
+                
+                closeMenu.addEventListener('click', closeNav);
+                navOverlay.addEventListener('click', closeNav);
+                
+                const navLinks = document.querySelectorAll('.nav-links a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', closeNav);
+                });
+            }
+            
+            function closeNav() {
+                if (navContainer && navOverlay) {
+                    navContainer.classList.remove('active');
+                    navOverlay.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                    document.body.style.overflow = '';
+                }
+            }
+            
+            // Formulario de contacto
+            const contactForm = document.getElementById('contactForm');
+            const confirmationOverlay = document.getElementById('confirmationOverlay');
+            const confirmationMessage = document.getElementById('confirmationMessage');
+            const confirmationClose = document.getElementById('confirmationClose');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Aquí se podría agregar validación adicional del formulario
+                    
+                    // Mostrar mensaje de confirmación
+                    if (confirmationOverlay && confirmationMessage) {
+                        confirmationOverlay.style.display = 'block';
+                        confirmationMessage.style.display = 'block';
+                    }
+                });
+            }
+            
+            if (confirmationClose) {
+                confirmationClose.addEventListener('click', function() {
+                    confirmationOverlay.style.display = 'none';
+                    confirmationMessage.style.display = 'none';
+                    
+                    // Resetear formulario después de enviar
+                    if (contactForm) {
+                        contactForm.reset();
+                    }
+                });
+            }
+            
+            // FAQs acordeón
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Cerrar otros items abiertos
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle del item actual
+                    item.classList.toggle('active');
+                });
+            });
+            
+            // Animaciones al scroll
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+            
+            function checkScroll() {
+                animateElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementTop < windowHeight - 100) {
+                        element.classList.add('animated');
+                    }
+                });
+            }
+            
+            // Comprobar elementos visibles al cargar
+            checkScroll();
+            
+            // Comprobar elementos visibles al hacer scroll
+            window.addEventListener('scroll', checkScroll);
+        });
+    </script>
+</body>
+</html>

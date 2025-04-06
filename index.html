@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetCare - Clínica Veterinaria</title>
+    <link rel="stylesheet" href="index-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Cabecera -->
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="PetCare Logo" class="logo">
+            <h1>PetCare</h1>
+        </div>
+        
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <div class="nav-container" id="navContainer">
+            <button class="close-menu" id="closeMenu">
+                <i class="fas fa-times"></i>
+            </button>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Inicio</a></li>
+                    <li><a href="about.html">Sobre Nosotros</a></li>
+                    <li><a href="services.html">Servicios</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="appointment.html">Reservar Cita</a></li>
+                    <li><a href="shop.html" class="shop-link">Tienda</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Añadir esta sección -->
+        <div class="nav-icons">
+            <a href="login.html" class="nav-icon">
+                <i class="fas fa-user"></i>
+            </a>
+        </div>
+        <!-- Fin de la sección a añadir -->
+
+        <div class="nav-overlay" id="navOverlay"></div>
+    </header>
+
+    <!-- Banner principal -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Cuidamos a tus mejores amigos</h2>
+            <p>Atención veterinaria profesional y compasiva para todas tus mascotas</p>
+            <div class="hero-buttons">
+                <a href="appointment.html" class="btn primary-btn">Reservar Cita</a>
+                <a href="about.html" class="btn secondary-btn">Conócenos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios destacados -->
+    <section class="services">
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="services-container">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-stethoscope"></i>
+                </div>
+                <h3>Consultas</h3>
+                <p>Chequeos generales, diagnósticos y tratamientos personalizados para tu mascota.</p>
+                <a href="services.html#consultas" class="service-link">Saber más</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-syringe"></i>
+                </div>
+                <h3>Vacunación</h3>
+                <p>Programa completo de vacunación para prevenir enfermedades comunes.</p>
+                <a href="services.html#vacunacion" class="service-link">Saber más</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-cut"></i>
+                </div>
+                <h3>Peluquería</h3>
+                <p>Servicios de peluquería y estética para que tu mascota luzca su mejor aspecto.</p>
+                <a href="services.html#peluqueria" class="service-link">Saber más</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-hospital"></i>
+                </div>
+                <h3>Cirugía</h3>
+                <p>Procedimientos quirúrgicos con los más altos estándares de seguridad.</p>
+                <a href="services.html#cirugia" class="service-link">Saber más</a>
+            </div>
+        </div>
+        <div class="services-button">
+            <a href="services.html" class="btn primary-btn">Ver todos los servicios</a>
+        </div>
+    </section>
+
+    <!-- Blog destacado -->
+    <section class="featured-blog">
+        <h2 class="section-title">Blog de Cuidados</h2>
+        <div class="blog-container">
+            <article class="blog-card">
+                <img src="blog-image1.jpg" alt="Cuidado de cachorros">
+                <div class="blog-content">
+                    <h3>Guía completa para el cuidado de cachorros</h3>
+                    <p>Aprende todo lo que necesitas saber para cuidar correctamente a tu nuevo cachorro.</p>
+                    <a href="blog.html#cuidado-cachorros" class="blog-link">Leer más</a>
+                </div>
+            </article>
+            <article class="blog-card">
+                <img src="blog-image2.jpg" alt="Alimentación gatos">
+                <div class="blog-content">
+                    <h3>Alimentación adecuada para gatos</h3>
+                    <p>Consejos sobre la nutrición ideal para tu felino en cada etapa de su vida.</p>
+                    <a href="blog.html#alimentacion-gatos" class="blog-link">Leer más</a>
+                </div>
+            </article>
+            <article class="blog-card">
+                <img src="blog-image3.jpg" alt="Ejercicio perros">
+                <div class="blog-content">
+                    <h3>Ejercicios recomendados para perros adultos</h3>
+                    <p>Mantén a tu perro activo y saludable con estas rutinas de ejercicio.</p>
+                    <a href="blog.html#ejercicio-perros" class="blog-link">Leer más</a>
+                </div>
+            </article>
+        </div>
+        <div class="blog-button">
+            <a href="blog.html" class="btn secondary-btn">Ver todos los artículos</a>
+        </div>
+    </section>
+
+    <!-- Tienda destacada -->
+    <section class="featured-products">
+        <h2 class="section-title">Productos Destacados</h2>
+        <div class="products-container">
+            <div class="product-card">
+                <div class="product-badge">Nuevo</div>
+                <img src="product1.jpg" alt="Alimento premium">
+                <div class="product-info">
+                    <h3>Alimento Premium Canino</h3>
+                    <p class="product-description">Nutrición completa y balanceada para perros adultos</p>
+                    <p class="product-price">$25.99</p>
+                    <a href="shop.html#alimento-premium" class="btn shop-btn">Añadir al carrito</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-badge">Oferta</div>
+                <img src="product2.jpg" alt="Juguete interactivo">
+                <div class="product-info">
+                    <h3>Juguete Interactivo</h3>
+                    <p class="product-description">Estimula la mente de tu mascota con este divertido juguete</p>
+                    <p class="product-price">$15.50</p>
+                    <a href="shop.html#juguete-interactivo" class="btn shop-btn">Añadir al carrito</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="product3.jpg" alt="Cama para mascotas">
+                <div class="product-info">
+                    <h3>Cama Ortopédica</h3>
+                    <p class="product-description">Comodidad y soporte para el descanso de tu mascota</p>
+                    <p class="product-price">$45.00</p>
+                    <a href="shop.html#cama-ortopedica" class="btn shop-btn">Añadir al carrito</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="product4.jpg" alt="Shampoo especial">
+                <div class="product-info">
+                    <h3>Shampoo Hipoalergénico</h3>
+                    <p class="product-description">Limpieza suave para mascotas con piel sensible</p>
+                    <p class="product-price">$12.75</p>
+                    <a href="shop.html#shampoo-hipoalergenico" class="btn shop-btn">Añadir al carrito</a>
+                </div>
+            </div>
+        </div>
+        <div class="shop-button">
+            <a href="shop.html" class="btn primary-btn">Visitar Tienda</a>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="testimonials">
+        <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+        <div class="testimonials-container">
+            <div class="testimonial-card">
+                <div class="testimonial-image">
+                    <img src="client1.jpg" alt="Cliente 1">
+                </div>
+                <div class="testimonial-content">
+                    <p>"El equipo de PetCare ha sido maravilloso con nuestro perro Max. Siempre recibimos un trato profesional y cariñoso."</p>
+                    <h4>Carolina Martínez</h4>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-image">
+                    <img src="client2.jpg" alt="Cliente 2">
+                </div>
+                <div class="testimonial-content">
+                    <p>"Excelente atención veterinaria. Mi gata Luna ha recibido el mejor cuidado. Los productos de la tienda son de gran calidad."</p>
+                    <h4>Roberto Sánchez</h4>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-image">
+                    <img src="client3.jpg" alt="Cliente 3">
+                </div>
+                <div class="testimonial-content">
+                    <p>"El sistema de reserva online es muy práctico. La atención es rápida y el personal es muy amable. Totalmente recomendado."</p>
+                    <h4>María González</h4>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <img src="logo.png" alt="PetCare Logo" class="footer-logo">
+                <p>Clínica veterinaria con más de 15 años dedicados al cuidado y bienestar de tus mascotas.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Enlaces rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="about.html">Sobre Nosotros</a></li>
+                    <li><a href="services.html">Servicios</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="appointment.html">Reservar Cita</a></li>
+                    <li><a href="shop.html">Tienda</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Servicios</h3>
+                <ul class="footer-links">
+                    <li><a href="services.html#consultas">Consultas generales</a></li>
+                    <li><a href="services.html#vacunacion">Vacunaciones</a></li>
+                    <li><a href="services.html#cirugia">Cirugía</a></li>
+                    <li><a href="services.html#peluqueria">Peluquería</a></li>
+                    <li><a href="services.html#radiografia">Radiografías</a></li>
+                    <li><a href="services.html#analisis">Análisis clínicos</a></li>
+                    <li><a href="services.html#urgencias">Urgencias 24h</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Boletín informativo</h3>
+                <p>Suscríbete para recibir consejos veterinarios y promociones especiales.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu email" required>
+                    <button type="submit" class="btn newsletter-btn">Suscribirse</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p> &copy; 2025 PetCare. Todos los derechos reservados. Diseñado por 1Mitsuba.</p>
+            <p><a href="privacy-policy.html">Política de privacidad</a> | <a href="terms-of-service.html">Términos de servicio</a></p>
+            <p>Desarrollado por <a href="https://www.tusitio.com" target="_blank"></a>1Mitsuba</p>
+        </div>
+        
+    </footer>
+    <!-- Enlace al archivo JavaScript común -->
+    <script src="script.js"></script>
+</body>
+</html>

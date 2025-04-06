@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - PetCare</title>
+    <link rel="stylesheet" href="blog-styles.css">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Cabecera con navegación -->
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="PetCare Logo" class="logo">
+            <h1>PetCare</h1>
+        </div>
+        
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <div class="nav-container" id="navContainer">
+            <button class="close-menu" id="closeMenu">
+                <i class="fas fa-times"></i>
+            </button>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="about.html">Sobre Nosotros</a></li>
+                    <li><a href="services.html">Servicios</a></li>
+                    <li><a href="blog.html" class="active">Blog</a></li>
+                    <li><a href="appointment.html">Reservar Cita</a></li>
+                    <li><a href="shop.html" class="shop-link">Tienda</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Añadir esta sección -->
+        <div class="nav-icons">
+            <a href="login.html" class="nav-icon">
+                <i class="fas fa-user"></i>
+            </a>
+        </div>
+        <div class="nav-overlay" id="navOverlay"></div>
+    </header>
+
+    <!-- Banner del Blog -->
+    <section class="page-banner">
+        <div class="banner-content">
+            <h1>El Blog de PetCare</h1>
+            <p>Consejos, noticias y artículos sobre el cuidado y bienestar de tus mascotas</p>
+        </div>
+    </section>
+
+    <!-- Contenido principal del blog -->
+    <div class="blog-container">
+        <!-- Filtros y búsqueda - tarjeta independiente -->
+        <div class="filter-card">
+            <h3 class="filter-title">Explorar por categorías</h3>
+            <div class="filter-tags">
+                <a href="#" class="filter-tag active">Todos</a>
+                <a href="#" class="filter-tag">Perros</a>
+                <a href="#" class="filter-tag">Gatos</a>
+                <a href="#" class="filter-tag">Nutrición</a>
+                <a href="#" class="filter-tag">Salud</a>
+                <a href="#" class="filter-tag">Entrenamiento</a>
+                <a href="#" class="filter-tag">Adopción</a>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar en el blog...">
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+
+        <!-- Post destacado - tarjeta independiente -->
+        <div class="featured-card">
+            <div class="featured-badge">Destacado</div>
+            <div class="featured-layout">
+                <div class="featured-image">
+                    <img src="blog-featured.jpg" alt="Artículo destacado">
+                </div>
+                <div class="featured-content">
+                    <span class="featured-category">Salud y Bienestar</span>
+                    <h2 class="featured-title">10 señales de que tu mascota necesita visitar al veterinario</h2>
+                    <div class="featured-meta">
+                        <div><i class="far fa-calendar"></i> 15 marzo, 2025</div>
+                        <div><i class="far fa-user"></i> Dra. María García</div>
+                    </div>
+                    <p class="featured-excerpt">Aunque nuestras mascotas no puedan hablar, hay signos claros que indican cuándo es momento de llevarlas al veterinario. En este artículo, exploramos las señales de alerta que no debes ignorar para mantener a tu mascota saludable.</p>
+                    <a href="#" class="read-more-btn">Leer artículo <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Artículos recientes - tarjetas independientes -->
+        <div class="section-header">
+            <h2 class="section-title">Artículos Recientes</h2>
+            <a href="#" class="view-all">Ver todos <i class="fas fa-chevron-right"></i></a>
+        </div>
+        
+        <div class="blog-grid">
+            <!-- Artículo 1 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <img src="blog-1.jpg" alt="Cómo elegir el alimento adecuado para tu perro">
+                    <span class="blog-category">Nutrición</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><i class="far fa-calendar"></i> 10 abril, 2025</div>
+                    <h3 class="blog-title">Cómo elegir el alimento adecuado para tu perro</h3>
+                    <p class="blog-excerpt">La alimentación es fundamental para la salud de tu mascota. Descubre cómo seleccionar la dieta ideal según la edad, tamaño y necesidades específicas de tu perro.</p>
+                    <div class="blog-footer">
+                        <div class="blog-author">
+                            <div class="author-avatar">
+                                <img src="author-1.jpg" alt="Carlos Ramírez">
+                            </div>
+                            <span class="author-name">Carlos Ramírez</span>
+                        </div>
+                        <div class="blog-stats">
+                            <span><i class="far fa-comment"></i> 24</span>
+                            <span><i class="far fa-heart"></i> 87</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Artículo 2 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <img src="blog-2.jpg" alt="Consejos para entrenar a un cachorro">
+                    <span class="blog-category">Entrenamiento</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><i class="far fa-calendar"></i> 5 abril, 2025</div>
+                    <h3 class="blog-title">Consejos para entrenar a un cachorro en sus primeras semanas</h3>
+                    <p class="blog-excerpt">El entrenamiento temprano es clave para desarrollar buenos hábitos. Aprende técnicas efectivas y respetuosas para educar a tu cachorro desde el primer día.</p>
+                    <div class="blog-footer">
+                        <div class="blog-author">
+                            <div class="author-avatar">
+                                <img src="author-2.jpg" alt="Laura Sánchez">
+                            </div>
+                            <span class="author-name">Laura Sánchez</span>
+                        </div>
+                        <div class="blog-stats">
+                            <span><i class="far fa-comment"></i> 18</span>
+                            <span><i class="far fa-heart"></i> 65</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Artículo 3 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <img src="blog-3.jpg" alt="Cuidados para gatos ancianos">
+                    <span class="blog-category">Salud</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><i class="far fa-calendar"></i> 28 marzo, 2025</div>
+                    <h3 class="blog-title">Cuidados especiales para gatos en su edad dorada</h3>
+                    <p class="blog-excerpt">Los gatos mayores requieren atenciones específicas. Conoce cómo adaptar su entorno, alimentación y rutinas para garantizar una vejez feliz y saludable.</p>
+                    <div class="blog-footer">
+                        <div class="blog-author">
+                            <div class="author-avatar">
+                                <img src="author-3.jpg" alt="Dr. Miguel Torres">
+                            </div>
+                            <span class="author-name">Dr. Miguel Torres</span>
+                        </div>
+                        <div class="blog-stats">
+                            <span><i class="far fa-comment"></i> 32</span>
+                            <span><i class="far fa-heart"></i> 94</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Categorías populares - tarjeta independiente -->
+        <div class="categories-card">
+            <h3 class="categories-title">Categorías Populares</h3>
+            <div class="categories-grid">
+                <a href="#" class="category-item">
+                    <i class="fas fa-dog category-icon"></i>
+                    <h4 class="category-name">Perros</h4>
+                    <span class="category-count">45 artículos</span>
+                </a>
+                <a href="#" class="category-item">
+                    <i class="fas fa-cat category-icon"></i>
+                    <h4 class="category-name">Gatos</h4>
+                    <span class="category-count">38 artículos</span>
+                </a>
+                <a href="#" class="category-item">
+                    <i class="fas fa-drumstick-bite category-icon"></i>
+                    <h4 class="category-name">Nutrición</h4>
+                    <span class="category-count">27 artículos</span>
+                </a>
+                <a href="#" class="category-item">
+                    <i class="fas fa-heartbeat category-icon"></i>
+                    <h4 class="category-name">Salud</h4>
+                    <span class="category-count">52 artículos</span>
+                </a>
+                <a href="#" class="category-item">
+                    <i class="fas fa-graduation-cap category-icon"></i>
+                    <h4 class="category-name">Entrenamiento</h4>
+                    <span class="category-count">34 artículos</span>
+                </a>
+                <a href="#" class="category-item">
+                    <i class="fas fa-home category-icon"></i>
+                    <h4 class="category-name">Adopción</h4>
+                    <span class="category-count">19 artículos</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Más artículos - tarjetas independientes -->
+        <div class="section-header">
+            <h2 class="section-title">Artículos Populares</h2>
+            <a href="#" class="view-all">Ver todos <i class="fas fa-chevron-right"></i></a>
+        </div>
+        
+        <div class="blog-grid">
+            <!-- Artículo 4 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <img src="blog-4.jpg" alt="Vacunas esenciales para mascotas">
+                    <span class="blog-category">Salud</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><i class="far fa-calendar"></i> 20 marzo, 2025</div>
+                    <h3 class="blog-title">Vacunas esenciales para cada etapa de vida de tu mascota</h3>
+                    <p class="blog-excerpt">Mantener al día el calendario de vacunación es vital. Repasamos cuáles son las vacunas imprescindibles y cuándo debe recibirlas tu mascota.</p>
+                    <div class="blog-footer">
+                        <div class="blog-author">
+                            <div class="author-avatar">
+                                <img src="author-4.jpg" alt="Dra. Ana Ruiz">
+                            </div>
+                            <span class="author-name">Dra. Ana Ruiz</span>
+                        </div>
+                        <div class="blog-stats">
+                            <span><i class="far fa-comment"></i> 29</span>
+                            <span><i class="far fa-heart"></i> 118</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Artículo 5 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <img src="blog-5.jpg" alt="Juguetes interactivos para gatos">
+                    <span class="blog-category">Entretenimiento</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><i class="far fa-calendar"></i> 15 marzo, 2025</div>
+                    <h3 class="blog-title">Los mejores juguetes interactivos para mantener a tu gato activo</h3>
+                    <p class="blog-excerpt">La estimulación mental es tan importante como la física. Descubre qué juguetes ayudarán a tu gato a mantenerse entretenido y en forma.</p>
+                    <div class="blog-footer">
+                        <div class="blog-author">
+                            <div class="author-avatar">
+                                <img src="author-5.jpg" alt="Pablo Mendoza">
+                            </div>
+                            <span class="author-name">Pablo Mendoza</span>
+                        </div>
+                        <div class="blog-stats">
+                            <span><i class="far fa-comment"></i> 15</span>
+                            <span><i class="far fa-heart"></i> 76</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Artículo 6 -->
+            <article class="blog-card">
+                <div class="blog-image">
+                    <img src="blog-6.jpg" alt="Adopción responsable">
+                    <span class="blog-category">Adopción</span>
+                </div>
+                <div class="blog-content">
+                    <div class="blog-date"><i class="far fa-calendar"></i> 8 marzo, 2025</div>
+                    <h3 class="blog-title">Guía completa para una adopción responsable</h3>
+                    <p class="blog-excerpt">Adoptar una mascota es una decisión importante. Te explicamos todos los pasos a seguir para asegurar una adopción exitosa y responsable.</p>
+                    <div class="blog-footer">
+                        <div class="blog-author">
+                            <div class="author-avatar">
+                                <img src="author-6.jpg" alt="Elena Martínez">
+                            </div>
+                            <span class="author-name">Elena Martínez</span>
+                        </div>
+                        <div class="blog-stats">
+                            <span><i class="far fa-comment"></i> 41</span>
+                            <span><i class="far fa-heart"></i> 152</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Newsletter - tarjeta independiente -->
+        <div class="newsletter-card">
+            <div class="newsletter-content">
+                <h3 class="newsletter-title">Suscríbete a nuestro boletín</h3>
+                <p class="newsletter-description">Recibe los mejores consejos y novedades sobre el cuidado de mascotas directamente en tu correo.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit">Suscribirme</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Autores destacados - tarjeta independiente -->
+        <div class="authors-card">
+            <h3 class="authors-title">Nuestros Expertos</h3>
+            <div class="authors-grid">
+                <div class="author-item">
+                    <div class="author-avatar-large">
+                        <img src="author-1.jpg" alt="Carlos Ramírez">
+                    </div>
+                    <h4 class="author-name-large">Carlos Ramírez</h4>
+                    <p class="author-role">Nutricionista Animal</p>
+                    <div class="author-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="author-item">
+                    <div class="author-avatar-large">
+                        <img src="author-2.jpg" alt="Laura Sánchez">
+                    </div>
+                    <h4 class="author-name-large">Laura Sánchez</h4>
+                    <p class="author-role">Entrenadora Canina</p>
+                    <div class="author-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="author-item">
+                    <div class="author-avatar-large">
+                        <img src="author-3.jpg" alt="Dr. Miguel Torres">
+                    </div>
+                    <h4 class="author-name-large">Dr. Miguel Torres</h4>
+                    <p class="author-role">Veterinario</p>
+                    <div class="author-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="author-item">
+                    <div class="author-avatar-large">
+                        <img src="author-4.jpg" alt="Dra. Ana Ruiz">
+                    </div>
+                    <h4 class="author-name-large">Dra. Ana Ruiz</h4>
+                    <p class="author-role">Veterinaria</p>
+                    <div class="author-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Etiquetas populares - tarjeta independiente -->
+        <div class="tags-card">
+            <h3 class="tags-title">Etiquetas Populares</h3>
+            <div class="tags-cloud">
+                <a href="#" class="tag-item">Perros</a>
+                <a href="#" class="tag-item">Gatos</a>
+                <a href="#" class="tag-item">Alimentación</a>
+                <a href="#" class="tag-item">Cuidados</a>
+                <a href="#" class="tag-item">Veterinario</a>
+                <a href="#" class="tag-item">Entrenamiento</a>
+                <a href="#" class="tag-item">Salud</a>
+                <a href="#" class="tag-item">Adopción</a>
+                <a href="#" class="tag-item">Vacunas</a>
+                <a href="#" class="tag-item">Comportamiento</a>
+                <a href="#" class="tag-item">Mascotas exóticas</a>
+                <a href="#" class="tag-item">Bienestar animal</a>
+                <a href="#" class="tag-item">Consejos</a>
+                <a href="#" class="tag-item">Juguetes</a>
+                <a href="#" class="tag-item">Higiene</a>
+            </div>
+        </div>
+
+        <!-- Botón cargar más -->
+        <div class="load-more">
+            <button class="load-more-btn">Cargar más artículos <i class="fas fa-redo"></i></button>
+        </div>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <img src="logo.png" alt="PetCare Logo" class="footer-logo">
+                <p>En PetCare, nos dedicamos a proporcionar los mejores servicios y consejos para el cuidado de tus mascotas. Contamos con un equipo de profesionales apasionados por el bienestar animal.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Enlaces Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="about.html">Sobre Nosotros</a></li>
+                    <li><a href="services.html">Servicios</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="shop.html">Tienda</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Servicios</h3>
+                <ul class="footer-links">
+                    <li><a href="services.html#medical">Atención Médica</a></li>
+                    <li><a href="services.html#grooming">Peluquería</a></li>
+                    <li><a href="services.html#training">Entrenamiento</a></li>
+                    <li><a href="services.html#daycare">Guardería</a></li>
+                    <li><a href="services.html#hotel">Hotel para Mascotas</a></li>
+                    <li><a href="services.html#adoption">Adopción</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Boletín</h3>
+                <p>Suscríbete para recibir noticias, ofertas especiales y consejos para el cuidado de tus mascotas.</p>
+                <form class="footer-newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit" class="footer-newsletter-btn">Suscribirse</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p> &copy; 2025 PetCare. Todos los derechos reservados. Diseñado por 1Mitsuba.</p>
+            <p><a href="privacy-policy.html">Política de privacidad</a> | <a href="terms-of-service.html">Términos de servicio</a></p>
+            <p>Desarrollado por <a href="https://www.tusitio.com" target="_blank"></a>1Mitsuba</p>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>

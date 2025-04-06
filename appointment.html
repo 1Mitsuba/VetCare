@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservar Cita - PetCare</title>
+    <link rel="stylesheet" href="appointment-styles.css">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Cabecera con navegación -->
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="PetCare Logo" class="logo">
+            <h1>PetCare</h1>
+        </div>
+        
+        <button class="menu-toggle" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </button>
+        
+        <div class="nav-container" id="navContainer">
+            <button class="close-menu" id="closeMenu">
+                <i class="fas fa-times"></i>
+            </button>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="about.html">Sobre Nosotros</a></li>
+                    <li><a href="services.html">Servicios</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="appointment.html" class="active">Reservar Cita</a></li>
+                    <li><a href="shop.html" class="shop-link">Tienda</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Añadir esta sección -->
+        <div class="nav-icons">
+            <a href="login.html" class="nav-icon">
+                <i class="fas fa-user"></i>
+            </a>
+        </div>
+        <div class="nav-overlay" id="navOverlay"></div>
+    </header>
+
+    <!-- Banner de Reserva de Citas -->
+    <section class="page-banner">
+        <div class="banner-content">
+            <h1>Reserva tu Cita</h1>
+            <p>Programa una visita para asegurar el mejor cuidado para tu mascota</p>
+        </div>
+    </section>
+
+    <!-- Contenido principal -->
+    <div class="appointment-container">
+        <!-- Formulario de reserva - tarjeta independiente -->
+        <div class="appointment-form-card">
+            <h2 class="form-title">Solicitar una Cita</h2>
+            <p class="form-description">Por favor, completa el formulario a continuación con toda la información necesaria para agendar tu cita. Te confirmaremos por correo electrónico o teléfono.</p>
+            
+            <form id="appointmentForm">
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="ownerName">Nombre completo *</label>
+                            <input type="text" id="ownerName" class="form-control" required>
+                            <div class="error-message">Este campo es obligatorio</div>
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="petName">Nombre de la mascota *</label>
+                            <input type="text" id="petName" class="form-control" required>
+                            <div class="error-message">Este campo es obligatorio</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="email">Correo electrónico *</label>
+                            <input type="email" id="email" class="form-control" required>
+                            <div class="error-message">Por favor ingresa un correo válido</div>
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="phone">Teléfono *</label>
+                            <input type="tel" id="phone" class="form-control" required>
+                            <div class="error-message">Por favor ingresa un teléfono válido</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Tipo de mascota *</label>
+                    <div class="radio-group">
+                        <div class="radio-item">
+                            <input type="radio" id="petDog" name="petType" value="dog" checked>
+                            <label for="petDog">Perro</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="petCat" name="petType" value="cat">
+                            <label for="petCat">Gato</label>
+                        </div>
+                        <div class="radio-item">
+                            <input type="radio" id="petOther" name="petType" value="other">
+                            <label for="petOther">Otro</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="petBreed">Raza</label>
+                            <input type="text" id="petBreed" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="petAge">Edad</label>
+                            <input type="text" id="petAge" class="form-control">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="serviceType">Tipo de servicio *</label>
+                    <select id="serviceType" class="form-control" required>
+                        <option value="">Selecciona un servicio</option>
+                        <option value="medical">Consulta Médica</option>
+                        <option value="vaccination">Vacunación</option>
+                        <option value="grooming">Peluquería</option>
+                        <option value="dental">Cuidado Dental</option>
+                        <option value="surgery">Cirugía</option>
+                        <option value="emergency">Emergencia</option>
+                        <option value="other">Otro</option>
+                    </select>
+                    <div class="error-message">Por favor selecciona un servicio</div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="appointmentDate">Fecha preferida *</label>
+                            <input type="date" id="appointmentDate" class="form-control" required>
+                            <div class="error-message">Por favor selecciona una fecha</div>
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="appointmentTime">Hora preferida *</label>
+                            <select id="appointmentTime" class="form-control" required>
+                                <option value="">Selecciona una hora</option>
+                                <option value="09:00">9:00 AM</option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="11:00">11:00 AM</option>
+                                <option value="12:00">12:00 PM</option>
+                                <option value="13:00">1:00 PM</option>
+                                <option value="14:00">2:00 PM</option>
+                                <option value="15:00">3:00 PM</option>
+                                <option value="16:00">4:00 PM</option>
+                                <option value="17:00">5:00 PM</option>
+                            </select>
+                            <div class="error-message">Por favor selecciona una hora</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="comments">Comentarios adicionales</label>
+                    <textarea id="comments" class="form-control" rows="4" placeholder="Comparte cualquier información adicional que consideres relevante para tu cita..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="firstVisit">
+                        <label for="firstVisit">Es la primera visita de mi mascota</label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">Acepto los términos y condiciones *</label>
+                        <div class="error-message">Debes aceptar los términos y condiciones</div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="form-submit">Reservar Cita</button>
+            </form>
+        </div>
+        
+        <!-- Información de contacto - tarjeta independiente -->
+        <div class="contact-info-card">
+            <div class="contact-info-content">
+                <h3 class="contact-title">Información de Contacto</h3>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>Dirección</h4>
+                        <p>Av. Principal #123, Colonia Centro<br>Ciudad de México, CP 12345</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>Teléfono</h4>
+                        <p><a href="tel:+525512345678">+52 55 1234 5678</a></p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>Correo Electrónico</h4>
+                        <p><a href="mailto:citas@petcare.com">citas@petcare.com</a></p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="contact-text">
+                        <h4>Horario de Atención</h4>
+                        <p>Lunes a Viernes: 9:00 AM - 6:00 PM<br>Sábados: 9:00 AM - 2:00 PM</p>
+                    </div>
+                </div>
+                
+                <div class="contact-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Servicios disponibles - tarjeta independiente -->
+        <div class="services-card">
+            <h3 class="services-title">Nuestros Servicios</h3>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-stethoscope"></i>
+                    </div>
+                    <div class="service-text">
+                        <h4>Consulta Médica</h4>
+                        <p>Evaluación completa del estado de salud de tu mascota.</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-syringe"></i>
+                    </div>
+                    <div class="service-text">
+                        <h4>Vacunación</h4>
+                        <p>Programa de vacunación personalizado según edad y necesidades.</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <div class="service-text">
+                        <h4>Peluquería</h4>
+                        <p>Servicio profesional de baño, corte y estética.</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-tooth"></i>
+                    </div>
+                    <div class="service-text">
+                        <h4>Cuidado Dental</h4>
+                        <p>Limpieza y tratamientos dentales para prevenir enfermedades.</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div class="service-text">
+                        <h4>Cirugía</h4>
+                        <p>Intervenciones quirúrgicas con equipamiento avanzado.</p>
+                    </div>
+                </div>
+                
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-ambulance"></i>
+                    </div>
+                    <div class="service-text">
+                        <h4>Emergencias</h4>
+                        <p>Atención inmediata para situaciones urgentes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Preguntas frecuentes - tarjeta independiente -->
+        <div class="faq-card">
+            <h3 class="faq-title">Preguntas Frecuentes</h3>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>¿Cómo puedo cancelar o reprogramar mi cita?</h4>
+                        <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Puedes cancelar o reprogramar tu cita llamando a nuestro número telefónico o enviando un correo electrónico con al menos 24 horas de anticipación. No hay penalización por reprogramar, pero te recomendamos hacerlo con tiempo para poder ofrecer ese espacio a otras mascotas.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>¿Qué debo llevar a la primera consulta de mi mascota?</h4>
+                        <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Para la primera consulta, es importante traer cualquier registro veterinario previo, cartilla de vacunación si la tiene, información sobre alimentos y medicamentos que está tomando actualmente. También es útil anotar cualquier comportamiento inusual o síntoma que hayas notado.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>¿Cuánto tiempo suele durar una consulta general?</h4>
+                        <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Una consulta general suele durar entre 30 y 45 minutos, dependiendo de las necesidades específicas de tu mascota. Las primeras visitas pueden ser un poco más largas ya que se realiza una evaluación más completa y se crea el historial médico.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>¿Ofrecen servicios a domicilio?</h4>
+                        <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí, contamos con servicios a domicilio para ciertos tipos de atención como vacunación, revisiones de rutina y algunas emergencias menores. Este servicio tiene un costo adicional dependiendo de la distancia. Por favor contacta con nosotros para más detalles y disponibilidad.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h4>¿Qué formas de pago aceptan?</h4>
+                        <div class="faq-toggle"><i class="fas fa-chevron-down"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Aceptamos efectivo, tarjetas de crédito y débito, transferencias bancarias y algunos seguros para mascotas. Para procedimientos más costosos, también ofrecemos planes de pago. Consulta con nuestra recepción para más información sobre las opciones disponibles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Horarios de atención - tarjeta independiente -->
+        <div class="hours-card">
+            <h3 class="hours-title">Horarios de Atención</h3>
+            <div class="hours-grid">
+                <div class="hours-column">
+                    <h4>Consulta General</h4>
+                    <div class="hours-list">
+                        <div class="hours-item">
+                            <span class="hours-day">Lunes a Viernes</span>
+                            <span class="hours-time">9:00 AM - 6:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="hours-day">Sábados</span>
+                            <span class="hours-time">9:00 AM - 2:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="hours-day">Domingos</span>
+                            <span class="hours-time">Cerrado</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hours-column">
+                    <h4>Peluquería</h4>
+                    <div class="hours-list">
+                        <div class="hours-item">
+                            <span class="hours-day">Lunes a Viernes</span>
+                            <span class="hours-time">10:00 AM - 5:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="hours-day">Sábados</span>
+                            <span class="hours-time">10:00 AM - 1:00 PM</span>
+                        </div>
+                        <div class="hours-item">
+                            <span class="hours-day">Domingos</span>
+                            <span class="hours-time">Cerrado</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hours-column">
+                    <h4>Emergencias</h4>
+                    <div class="hours-list">
+                        <div class="hours-item">
+                            <span class="hours-day">Lunes a Domingo</span>
+                            <span class="hours-time">24 horas</span>
+                        </div>
+                    </div>
+                    <p class="hours-note">*Servicio de guardia para emergencias fuera del horario regular</p>
+                </div>
+            </div>
+            
+            <p class="hours-note">Nota: Los horarios pueden variar durante días festivos. Por favor llama para confirmar.</p>
+            <p class="hours-contact">Para emergencias fuera de horario, llama al: <a href="tel:+525511223344">+52 55 1122 3344</a></p>
+        </div>
+        
+        <!-- Testimonios - tarjeta independiente -->
+        <div class="testimonials-card">
+            <h3 class="testimonials-title">Lo que dicen nuestros clientes</h3>
+            <div class="testimonials-slider">
+                <div class="testimonial-item">
+                    <p class="testimonial-content">Siempre he tenido una excelente experiencia con el equipo de PetCare. Mi perrita Luna ha recibido un trato excepcional en cada visita. El proceso de reserva es muy sencillo y el personal siempre es amable y profesional.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="client-1.jpg" alt="María Rodríguez">
+                        </div>
+                        <div class="testimonial-info">
+                            <h5>María Rodríguez</h5>
+                            <p>Dueña de Luna</p>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-item">
+                    <p class="testimonial-content">Cuando mi gato Simba necesitó cirugía de emergencia, el equipo de PetCare estuvo increíble. Me mantuvieron informado en todo momento y el seguimiento post-operatorio fue excelente. No podría estar más agradecido.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="client-2.jpg" alt="Carlos Méndez">
+                        </div>
+                        <div class="testimonial-info">
+                            <h5>Carlos Méndez</h5>
+                            <p>Dueño de Simba</p>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-item">
+                    <p class="testimonial-content">El servicio de peluquería es fantástico. Mi cocker Max siempre sale impecable y feliz. Además, son muy puntuales con las citas y los precios son razonables para la calidad del servicio que ofrecen.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="client-3.jpg" alt="Ana Gómez">
+                        </div>
+                        <div class="testimonial-info">
+                            <h5>Ana Gómez</h5>
+                            <p>Dueña de Max</p>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-nav testimonial-prev">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
+                <div class="testimonial-nav testimonial-next">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+                
+                <div class="testimonial-dots">
+                    <div class="testimonial-dot active"></div>
+                    <div class="testimonial-dot"></div>
+                    <div class="testimonial-dot"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Mensaje emergente de confirmación -->
+    <div class="confirmation-overlay" id="confirmationOverlay"></div>
+    <div class="confirmation-message" id="confirmationMessage">
+        <div class="confirmation-icon">
+            <i class="fas fa-check"></i>
+        </div>
+        <h3 class="confirmation-title">¡Cita Reservada con Éxito!</h3>
+        <p class="confirmation-text">Hemos recibido tu solicitud de cita. En breve recibirás un correo electrónico con los detalles de confirmación. ¡Gracias por confiar en PetCare!</p>
+        <button class="confirmation-btn" id="confirmationClose">Entendido</button>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-column">
+                <img src="logo.png" alt="PetCare Logo" class="footer-logo">
+                <p>En PetCare, nos dedicamos a proporcionar los mejores servicios y consejos para el cuidado de tus mascotas. Contamos con un equipo de profesionales apasionados por el bienestar animal.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Enlaces Rápidos</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="about.html">Sobre Nosotros</a></li>
+                    <li><a href="services.html">Servicios</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="shop.html">Tienda</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Servicios</h3>
+                <ul class="footer-links">
+                    <li><a href="services.html#medical">Atención Médica</a></li>
+                    <li><a href="services.html#grooming">Peluquería</a></li>
+                    <li><a href="services.html#training">Entrenamiento</a></li>
+                    <li><a href="services.html#daycare">Guardería</a></li>
+                    <li><a href="services.html#hotel">Hotel para Mascotas</a></li>
+                    <li><a href="services.html#adoption">Adopción</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Boletín</h3>
+                <p>Suscríbete para recibir noticias, ofertas especiales y consejos para el cuidado de tus mascotas.</p>
+                <form class="footer-newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit" class="footer-newsletter-btn">Suscribirse</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p> &copy; 2025 PetCare. Todos los derechos reservados. Diseñado por 1Mitsuba.</p>
+            <p><a href="privacy-policy.html">Política de privacidad</a> | <a href="terms-of-service.html">Términos de servicio</a></p>
+            <p>Desarrollado por <a href="https://www.tusitio.com" target="_blank"></a>1Mitsuba</p>
+        </div>
+    </footer>
+    <!-- Enlace al archivo JavaScript común -->
+    <script src="script.js"></script>
+    <!-- Script para interactividad -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menú hamburguesa
+            const menuToggle = document.getElementById('menuToggle');
+            const closeMenu = document.getElementById('closeMenu');
+            const navContainer = document.getElementById('navContainer');
+            const navOverlay = document.getElementById('navOverlay');
+            
+            if (menuToggle && closeMenu && navContainer && navOverlay) {
+                menuToggle.addEventListener('click', function() {
+                    navContainer.classList.add('active');
+                    navOverlay.classList.add('active');
+                    document.body.classList.add('menu-open');
+                    document.body.style.overflow = 'hidden';
+                });
+                
+                closeMenu.addEventListener('click', closeNav);
+                navOverlay.addEventListener('click', closeNav);
+                
+                const navLinks = document.querySelectorAll('.nav-links a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', closeNav);
+                });
+            }
+            
+            function closeNav() {
+                if (navContainer && navOverlay) {
+                    navContainer.classList.remove('active');
+                    navOverlay.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                    document.body.style.overflow = '';
+                }
+            }
+            
+            // Formulario de cita
+            const appointmentForm = document.getElementById('appointmentForm');
+            const confirmationOverlay = document.getElementById('confirmationOverlay');
+            const confirmationMessage = document.getElementById('confirmationMessage');
+            const confirmationClose = document.getElementById('confirmationClose');
+            
+            if (appointmentForm) {
+                appointmentForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Aquí se podría agregar validación adicional del formulario
+                    
+                    // Mostrar mensaje de confirmación
+                    if (confirmationOverlay && confirmationMessage) {
+                        confirmationOverlay.style.display = 'block';
+                        confirmationMessage.style.display = 'block';
+                    }
+                });
+            }
+            
+            if (confirmationClose) {
+                confirmationClose.addEventListener('click', function() {
+                    confirmationOverlay.style.display = 'none';
+                    confirmationMessage.style.display = 'none';
+                    
+                    // Resetear formulario después de enviar
+                    if (appointmentForm) {
+                        appointmentForm.reset();
+                    }
+                });
+            }
+            
+            // FAQs acordeón
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', () => {
+                    // Cerrar otros items abiertos
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle del item actual
+                    item.classList.toggle('active');
+                });
+            });
+            
+            // Slider de testimonios
+            const testimonialDots = document.querySelectorAll('.testimonial-dot');
+            const testimonialPrev = document.querySelector('.testimonial-prev');
+            const testimonialNext = document.querySelector('.testimonial-next');
+            const testimonialItems = document.querySelectorAll('.testimonial-item');
+            let currentTestimonial = 0;
+            
+            function showTestimonial(index) {
+                testimonialItems.forEach((item, i) => {
+                    item.style.display = i === index ? 'block' : 'none';
+                });
+                
+                testimonialDots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+                
+                currentTestimonial = index;
+            }
+            
+            // Inicializar slider
+            if (testimonialItems.length > 0) {
+                showTestimonial(0);
+                
+                testimonialDots.forEach((dot, i) => {
+                    dot.addEventListener('click', () => {
+                        showTestimonial(i);
+                    });
+                });
+                
+                if (testimonialPrev) {
+                    testimonialPrev.addEventListener('click', () => {
+                        currentTestimonial = (currentTestimonial - 1 + testimonialItems.length) % testimonialItems.length;
+                        showTestimonial(currentTestimonial);
+                    });
+                }
+                
+                if (testimonialNext) {
+                    testimonialNext.addEventListener('click', () => {
+                        currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
+                        showTestimonial(currentTestimonial);
+                    });
+                }
+                
+                // Auto rotación cada 5 segundos
+                setInterval(() => {
+                    currentTestimonial = (currentTestimonial + 1) % testimonialItems.length;
+                    showTestimonial(currentTestimonial);
+                }, 5000);
+            }
+            
+            // Animaciones al scroll
+            const animateElements = document.querySelectorAll('.animate-on-scroll');
+            
+            function checkScroll() {
+                animateElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementTop < windowHeight - 100) {
+                        element.classList.add('animated');
+                    }
+                });
+            }
+            
+            // Comprobar elementos visibles al cargar
+            checkScroll();
+            
+            // Comprobar elementos visibles al hacer scroll
+            window.addEventListener('scroll', checkScroll);
+        });
+    </script>
+</body>
+</html>
