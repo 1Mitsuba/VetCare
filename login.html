@@ -81,7 +81,7 @@
                     
                     <div class="separator">O continúa con email</div>
                     
-                    <form id="loginUserForm">
+                    <form>
                         <div class="form-group">
                             <label for="email">Correo Electrónico</label>
                             <input type="email" id="email" class="form-control" placeholder="ejemplo@correo.com" required>
@@ -123,40 +123,39 @@
                     
                     <div class="separator">O regístrate con email</div>
                     
-                    <form id="registerUserForm">
-                        <!-- Campos para nombre y apellidos -->
-                        <div class="form-group">
-                            <label for="reg-name">Nombre</label>
-                            <input type="text" id="reg-name" class="form-control" placeholder="Ingresa tu nombre" required>
-                        </div>
+                    <form>
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="reg-lastname1">Primer Apellido</label>
-                                <input type="text" id="reg-lastname1" class="form-control" placeholder="Primer apellido" required>
+                                <label for="reg-nombre">Nombre</label>
+                                <input type="text" id="reg-nombre" class="form-control" placeholder="Tu nombre" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="reg-primer-apellido">Primer Apellido</label>
+                                <input type="text" id="reg-primer-apellido" class="form-control" placeholder="Tu primer apellido" required>
                             </div>
                             <div class="form-group">
-                                <label for="reg-lastname2">Segundo Apellido</label>
-                                <input type="text" id="reg-lastname2" class="form-control" placeholder="Segundo apellido (opcional)">
+                                <label for="reg-segundo-apellido">Segundo Apellido <span class="optional">(opcional)</span></label>
+                                <input type="text" id="reg-segundo-apellido" class="form-control" placeholder="Tu segundo apellido">
                             </div>
                         </div>
                         
-                        <!-- Campo CI -->
                         <div class="form-group">
-                            <label for="reg-ci">CI (Cédula de Identidad)</label>
-                            <input type="text" id="reg-ci" class="form-control" placeholder="Ingresa tu CI" required>
+                            <label for="reg-ci">CI (Carnet de Identidad)</label>
+                            <input type="text" id="reg-ci" class="form-control" placeholder="Tu número de CI" required>
                         </div>
                         
-                        <!-- Campo dirección -->
                         <div class="form-group">
-                            <label for="reg-address">Dirección</label>
-                            <input type="text" id="reg-address" class="form-control" placeholder="Ingresa tu dirección" required>
+                            <label for="reg-direccion">Dirección</label>
+                            <input type="text" id="reg-direccion" class="form-control" placeholder="Tu dirección completa" required>
                         </div>
                         
-                        <!-- Campo género -->
                         <div class="form-group">
-                            <label for="reg-gender">Género</label>
-                            <select id="reg-gender" class="form-control" required>
-                                <option value="" disabled selected>Selecciona tu género</option>
+                            <label for="reg-genero">Género</label>
+                            <select id="reg-genero" class="form-control" required>
+                                <option value="">Selecciona tu género</option>
                                 <option value="masculino">Masculino</option>
                                 <option value="femenino">Femenino</option>
                                 <option value="otro">Otro</option>
@@ -164,23 +163,21 @@
                             </select>
                         </div>
                         
-                        <!-- Campos opcionales -->
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="reg-nit">NIT (opcional)</label>
-                                <input type="text" id="reg-nit" class="form-control" placeholder="Ingresa tu NIT">
-                            </div>
-                            <div class="form-group">
-                                <label for="reg-phone">Teléfono (opcional)</label>
-                                <input type="tel" id="reg-phone" class="form-control" placeholder="Ingresa tu teléfono">
-                            </div>
+                        <div class="form-group">
+                            <label for="reg-nit">NIT <span class="optional">(opcional)</span></label>
+                            <input type="text" id="reg-nit" class="form-control" placeholder="Tu número de NIT">
                         </div>
                         
-                        <!-- Campos de correo y contraseña -->
+                        <div class="form-group">
+                            <label for="reg-telefono">Teléfono <span class="optional">(opcional)</span></label>
+                            <input type="tel" id="reg-telefono" class="form-control" placeholder="Tu número de teléfono">
+                        </div>
+                        
                         <div class="form-group">
                             <label for="reg-email">Correo Electrónico</label>
                             <input type="email" id="reg-email" class="form-control" placeholder="ejemplo@correo.com" required>
                         </div>
+                        
                         <div class="form-group">
                             <label for="reg-password">Contraseña</label>
                             <div class="password-container">
@@ -188,6 +185,7 @@
                                 <i class="fas fa-eye toggle-password" id="toggleRegPassword"></i>
                             </div>
                         </div>
+                        
                         <div class="form-group">
                             <label for="reg-confirm">Confirmar Contraseña</label>
                             <div class="password-container">
@@ -195,6 +193,7 @@
                                 <i class="fas fa-eye toggle-password" id="toggleConfirmPassword"></i>
                             </div>
                         </div>
+                        
                         <div class="terms-checkbox">
                             <input type="checkbox" id="terms" required>
                             <label for="terms">He leído y acepto los <a href="#">Términos y Condiciones</a> y la <a href="#">Política de Privacidad</a> de PetCare</label>
@@ -261,6 +260,114 @@
     </footer>
 
     <!-- Script para interactividad -->
-    <script src="login.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Menú hamburguesa
+            const menuToggle = document.getElementById('menuToggle');
+            const closeMenu = document.getElementById('closeMenu');
+            const navContainer = document.getElementById('navContainer');
+            const navOverlay = document.getElementById('navOverlay');
+            
+            if (menuToggle && closeMenu && navContainer && navOverlay) {
+                menuToggle.addEventListener('click', function() {
+                    navContainer.classList.add('active');
+                    navOverlay.classList.add('active');
+                    document.body.classList.add('menu-open');
+                    document.body.style.overflow = 'hidden';
+                });
+                
+                closeMenu.addEventListener('click', closeNav);
+                navOverlay.addEventListener('click', closeNav);
+                
+                const navLinks = document.querySelectorAll('.nav-links a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', closeNav);
+                });
+            }
+            
+            function closeNav() {
+                if (navContainer && navOverlay) {
+                    navContainer.classList.remove('active');
+                    navOverlay.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                    document.body.style.overflow = '';
+                }
+            }
+            
+            // Alternar entre formularios de login y registro
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+            const showRegisterBtn = document.getElementById('showRegisterBtn');
+            const showRegisterLink = document.getElementById('showRegisterLink');
+            const showLoginLink = document.getElementById('showLoginLink');
+            const authInfo = document.querySelector('.auth-info-content');
+            
+            function showRegister() {
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'block';
+                authInfo.innerHTML = `
+                    <img src="logo.png" alt="PetCare Logo" class="info-logo">
+                    <h2 class="info-title">¡Únete a nuestra comunidad!</h2>
+                    <p class="info-text">Regístrate para obtener beneficios exclusivos, descuentos especiales y un seguimiento personalizado para la salud de tus mascotas.</p>
+                    <button class="info-btn" id="showLoginBtn">Ya tengo cuenta</button>
+                `;
+                
+                // Agregamos listener al nuevo botón
+                document.getElementById('showLoginBtn').addEventListener('click', showLogin);
+            }
+            
+            function showLogin() {
+                registerForm.style.display = 'none';
+                loginForm.style.display = 'block';
+                authInfo.innerHTML = `
+                    <img src="logo.png" alt="PetCare Logo" class="info-logo">
+                    <h2 class="info-title">¡Bienvenido de vuelta!</h2>
+                    <p class="info-text">Accede a tu cuenta para administrar tus pedidos, gestionar tus citas y obtener recomendaciones personalizadas para tus mascotas.</p>
+                    <button class="info-btn" id="showRegisterBtn">Crear Cuenta</button>
+                `;
+                
+                // Agregamos listener al nuevo botón
+                document.getElementById('showRegisterBtn').addEventListener('click', showRegister);
+            }
+            
+            showRegisterBtn.addEventListener('click', showRegister);
+            showRegisterLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                showRegister();
+            });
+            
+            showLoginLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                showLogin();
+            });
+            
+            // Mostrar/ocultar contraseñas
+            const togglePassword = document.getElementById('togglePassword');
+            const toggleRegPassword = document.getElementById('toggleRegPassword');
+            const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
+            const passwordField = document.getElementById('password');
+            const regPasswordField = document.getElementById('reg-password');
+            const confirmPasswordField = document.getElementById('reg-confirm');
+            
+            togglePassword.addEventListener('click', function() {
+                togglePasswordVisibility(passwordField, this);
+            });
+            
+            toggleRegPassword.addEventListener('click', function() {
+                togglePasswordVisibility(regPasswordField, this);
+            });
+            
+            toggleConfirmPassword.addEventListener('click', function() {
+                togglePasswordVisibility(confirmPasswordField, this);
+            });
+            
+            function togglePasswordVisibility(passwordField, icon) {
+                const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordField.setAttribute('type', type);
+                icon.classList.toggle('fa-eye');
+                icon.classList.toggle('fa-eye-slash');
+            }
+        });
+    </script>
 </body>
 </html>
